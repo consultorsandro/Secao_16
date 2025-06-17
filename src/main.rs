@@ -1,5 +1,35 @@
 use  std::collections::HashSet;// Class 267
-fn main() { //Class 267
+fn main() { //Class 268
+    let mut concert_queue: HashSet<&str> = HashSet::new(); // Boris, melissa
+    let mut movie_queue: HashSet<&str> = HashSet::new(); // Boris, Phil
+
+    concert_queue.insert("Boris");
+    concert_queue.insert("Melissa");
+
+    movie_queue.insert("Boris");
+    movie_queue.insert("Phil");
+
+    println!("{:?}", concert_queue.union(&movie_queue)); // Union of concert and movie queues
+    println!("{:?}", movie_queue.union(&concert_queue)); // Union of movie and concert queues
+
+    println!("{:?}", concert_queue.difference(&movie_queue)); // Difference of concert and movie queues
+    println!("{:?}", movie_queue.difference(&concert_queue)); // Difference of movie and concert queues
+
+    println!("{:?}", concert_queue.symmetric_difference(&movie_queue)); // Symmetric difference of concert and movie queues
+    println!("{:?}", movie_queue.symmetric_difference(&concert_queue)); // Symmetric difference of movie and concert queues
+
+    println!("{:?}", concert_queue.is_disjoint(&movie_queue)); // Check if concert and movie queues are disjoint
+    println!("{:?}", movie_queue.is_disjoint(&concert_queue)); // Check if movie and concert queues are disjoint
+
+    let mut attendees: HashSet<&str> = HashSet::new();
+    attendees.insert("Boris");
+    println!("{:?}", attendees.is_subset(&concert_queue)); // Check if attendees is a subset of concert queue
+
+    println!("{:?}", concert_queue.is_superset(&attendees)); // Check if concert queue is a superset of attendees
+
+}
+/*
+//Class 267
     let mut concert_queue: HashSet<&str> = HashSet::new();
     println!("Concert Queue: {:?}", concert_queue);
 
@@ -21,8 +51,7 @@ fn main() { //Class 267
     println!("{:?}", concert_queue.get("Molly")); // Get a reference to Molly in the queue
     println!("{:?}", concert_queue.get("Joe")); // Get a reference to Joe in the queue
 
-}
-
+*/
  /*
  //Class 266
 
