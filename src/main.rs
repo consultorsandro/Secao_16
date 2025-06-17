@@ -1,5 +1,30 @@
-use  std::collections::HashMap; // Class 261
-fn main() {//Class 266
+use  std::collections::HashSet;// Class 267
+fn main() { //Class 267
+    let mut concert_queue: HashSet<&str> = HashSet::new();
+    println!("Concert Queue: {:?}", concert_queue);
+
+    concert_queue.insert("Molly");
+    concert_queue.insert("Megan");
+    println!("Concert Queue after adding Molly and Megan: {:?}", concert_queue);
+    println!("{}", concert_queue.len());
+
+    concert_queue.insert("Molly"); // Duplicate entry, will not be added
+    println!("{:?}", concert_queue);
+
+    println!("{}", concert_queue.remove("Megan"));// Remove Megan from the queue
+    println!("{}", concert_queue.remove("Franny"));// Remove Franny from the queue
+    println!("Concert Queue after removals: {:?}", concert_queue);
+
+    println!("{}", concert_queue.contains("Molly")); // Check if Molly is in the queue
+    println!("{}", concert_queue.contains("Fred")); // Check if Fred is in the queue
+
+    println!("{:?}", concert_queue.get("Molly")); // Get a reference to Molly in the queue
+    println!("{:?}", concert_queue.get("Joe")); // Get a reference to Joe in the queue
+
+}
+
+ /*
+ //Class 266
 
     let mut coffe_pairings: HashMap<&str, &str> = HashMap::new();
     let drink = String::from("Latte");
@@ -13,9 +38,7 @@ fn main() {//Class 266
 
     coffe_pairings.entry("Cappuccino").or_insert("Pistachio Milk");
     println!("Coffee Pairings after adding Cappuccino: {:?}", coffe_pairings);
-
-}
-
+*/
 /*
 //Class 265
 
