@@ -1,5 +1,20 @@
 use  std::collections::HashMap; // Class 261
-fn main() {
+fn main() {//Class 265
+
+    let mut coffe_pairings: HashMap<&str, &str> = HashMap::new();
+    let drink = String::from("Latte");
+    let milk = String::from("Oat Milk");
+    coffe_pairings.insert(&drink, &milk); // inserting a reference to the String
+    coffe_pairings.insert("flat white", "Almond Milk");
+    println!("{:?}", coffe_pairings);
+    coffe_pairings.insert("Latte", "Pristachio Milk");
+    println!("Coffee Pairings: {:?}", coffe_pairings);
+   
+
+}
+
+/*
+//Class 263
 
     let mut coffe_pairings: HashMap<&str, &str> = HashMap::new();
     let drink = String::from("Latte");
@@ -8,7 +23,7 @@ fn main() {
     coffe_pairings.insert("flat white", "Almond Milk");
     println!("Coffee Pairings: {:?}", coffe_pairings.len());
     println!("{} {}", drink, milk);
-}
+*/
 /*
  //Class 262
     let data = [("Bobby", 10), ("Alice", 20), ("Charlie", 30)];
